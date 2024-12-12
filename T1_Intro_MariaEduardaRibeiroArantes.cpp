@@ -1,10 +1,18 @@
+/*---------------------------------------------
+Trabalho IntroduÃ§Ã£o a Tecnologia da InformaÃ§Ã£o
+Aluna: Maria Eduarda Ribeiro Arantes
+RA: 241023742
+Compilador: TDM-GCC 4.9.2
+Sistema Operacional: Windows
+----------------------------------------------*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <locale.h>
 
-//Conversão binário/decimal
+//ConversÃ£o binÃ¡rio/decimal
 int bin_to_dec(int bin) {
     int dec = 0, i = 0, digito;
     while (bin!= 0) {
@@ -16,7 +24,7 @@ int bin_to_dec(int bin) {
     return dec;
 }
 
-//Conversão decimal/binário
+//ConversÃ£o decimal/binÃ¡rio
 int dec_to_bin(int dec){
     int resto, i = 1, bin = 0;
     while (dec != 0) {
@@ -28,7 +36,7 @@ int dec_to_bin(int dec){
     return bin;
 }
 
-//Conversão decimal/octal
+//ConversÃ£o decimal/octal
 int dec_to_oct(int dec){
     int potencia = 1, oct = 0, digito;
     while (dec != 0) {
@@ -40,12 +48,12 @@ int dec_to_oct(int dec){
     return oct;
 }
 
-//Conversão hexa/binário
+//ConversÃ£o hexa/binÃ¡rio
 void hex_to_bin() {
     char hex[20] , bin[65] = "";
     int i, len;
 
-    printf("Digite um número em hexadecimal: ");
+    printf("Digite um nÃºmero em hexadecimal: ");
     scanf("%s", hex);
 
     len = strlen(hex);
@@ -103,18 +111,18 @@ void hex_to_bin() {
                 strcat(bin, "1111");
                 break;
             default:
-                printf("Número hexadecimal inválido.\n");
+                printf("NÃºmero hexadecimal invÃ¡lido.\n");
         }
     }
 
-    printf("O número em binário é: %s.\n", bin);
+    printf("O nÃºmero em binÃ¡rio Ã©: %s.\n", bin);
 
 }
 
-//Conversão binário/hexa
+//ConversÃ£o binÃ¡rio/hexa
 void bin_to_hex(){
     int dec = 0, i = 0, digito, bin;
-    printf("Digite um número em binário: ");
+    printf("Digite um nÃºmero em binÃ¡rio: ");
     scanf("%d",&bin);
 
     while (bin!= 0) {
@@ -128,16 +136,16 @@ void bin_to_hex(){
 
     sprintf(hex, "%X", dec);
 
-    printf("O número em hexadecimal é: %s.\n",hex);
+    printf("O nÃºmero em hexadecimal Ã©: %s.\n",hex);
 
 }
 
-//Conversão octal/binário
+//ConversÃ£o octal/binÃ¡rio
 void oct_to_bin() {
     char oct[20] , bin[65] = "";
     int i, len;
 
-    printf("Digite um número em octal: ");
+    printf("Digite um nÃºmero em octal: ");
     scanf("%s", oct);
 
     len = strlen(oct);
@@ -169,18 +177,18 @@ void oct_to_bin() {
                 strcat(bin, "111");
                 break;
             default:
-                printf("Número octal inválido.\n");
+                printf("NÃºmero octal invÃ¡lido.\n");
         }
     }
 
-    printf("O número em binário é: %s.\n", bin);
+    printf("O nÃºmero em binÃ¡rio Ã©: %s.\n", bin);
 
 }
 
-//Conversão decimal/octal
+//ConversÃ£o decimal/octal
 void dec_to_hex(){
     int dec ;
-    printf("Digite um número em decimal: ");
+    printf("Digite um nÃºmero em decimal: ");
     scanf("%d", &dec);
 
     
@@ -188,14 +196,14 @@ void dec_to_hex(){
 
     sprintf(hex, "%X", dec);
 
-    printf("O número em hexadecimal é: %s.\n",hex);
+    printf("O nÃºmero em hexadecimal Ã©: %s.\n",hex);
 
 }
 
-//Conversão octal/decimal
+//ConversÃ£o octal/decimal
 void oct_to_dec(){
     int dec, oct,i;
-    printf("Digite um número octal: ");
+    printf("Digite um nÃºmero octal: ");
     scanf("%d", &oct);
     dec = 0;
     i = 0;
@@ -206,14 +214,14 @@ void oct_to_dec(){
         oct /= 10;
     }
 
-    printf("O número em decimal é: %d.\n", dec);
+    printf("O nÃºmero em decimal Ã©: %d.\n", dec);
 
 }
 
-//Conversão octal/hexa
+//ConversÃ£o octal/hexa
 void oct_to_hex(){
     int oct,i=0,dec=0;
-    printf("Digite um número em octal: ");
+    printf("Digite um nÃºmero em octal: ");
     scanf("%d", &oct);
     char hex[20];
 
@@ -225,37 +233,37 @@ void oct_to_hex(){
 
     sprintf(hex, "%X", dec);
 
-    printf("O número em hexadecimal é: %s.\n",hex);
+    printf("O nÃºmero em hexadecimal Ã©: %s.\n",hex);
 
 }
 
-//Conversão hexa/decimal
+//ConversÃ£o hexa/decimal
 void hex_to_dec(){
     char hex[100];
     long dec;
     char* end_ptr;
 
-    printf("Digite um número em hexadecimal: ");
+    printf("Digite um nÃºmero em hexadecimal: ");
     scanf("%s", hex);
 
     dec = strtol(hex, &end_ptr, 16);
 
     if (end_ptr == hex) {
-        printf("Erro na conversão.\n");
+        printf("Erro na conversÃ£o.\n");
     } else {
-        printf("O número em decimal é: %ld.\n",dec);
+        printf("O nÃºmero em decimal Ã©: %ld.\n",dec);
     }
 
 }
 
 
-//Conversão hexa/octal
+//ConversÃ£o hexa/octal
 void hex_to_oct(){
     char hex[100];
     long dec;
     char* end_ptr;
 
-    printf("Digite um número em hexadecimal: ");
+    printf("Digite um nÃºmero em hexadecimal: ");
     scanf("%s", hex);
 
     dec = strtol(hex, &end_ptr, 16);
@@ -267,7 +275,7 @@ void hex_to_oct(){
         potencia *= 10;
         dec /= 8;
     }
-    printf("O número em octal é: %d.\n",oct);    
+    printf("O nÃºmero em octal Ã©: %d.\n",oct);    
 
 }
 
@@ -279,36 +287,36 @@ int main(){
     
     do{
     printf("-------------------MENU------------------");
-    printf("\n1.Binário\n2.Decimal\n3.Octal\n4.Hexadecimal\n");
+    printf("\n1.BinÃ¡rio\n2.Decimal\n3.Octal\n4.Hexadecimal\n");
     printf("-----------------------------------------");
     printf("\n");
     printf("\n");
-    printf("Escolha a entrada do sistema númerico");
+    printf("Escolha a entrada do sistema nÃºmerico");
     printf("\n");
-    printf("Opção número: ");
+    printf("OpÃ§Ã£o nÃºmero: ");
     scanf("%d", &i);
     printf("\n");
-    printf("Para qual sistema númerico você deseja transferir ");
+    printf("Para qual sistema nÃºmerico vocÃª deseja transferir ");
     printf("\n");
-    printf("Opção número: ");
+    printf("OpÃ§Ã£o nÃºmero: ");
     scanf("%d", &d);
     printf("\n");
     if(i== d){
-        printf("Os números são iguais");
+        printf("Os nÃºmeros sÃ£o iguais");
     }else{
         if (i == 1 && d == 2){
-            printf("Digite um número em binário: ");
+            printf("Digite um nÃºmero em binÃ¡rio: ");
             scanf("%d",&bin);
             dec = bin_to_dec(bin);
-            printf("O número em decimal é: %d.",dec);
+            printf("O nÃºmero em decimal Ã©: %d.",dec);
             printf("\n");
         }
         else if (i==1 && d == 3){
-            printf("Digite um número em binário: ");
+            printf("Digite um nÃºmero em binÃ¡rio: ");
             scanf("%d",&bin);
             dec = bin_to_dec(bin);
             oct = dec_to_oct(dec);
-            printf("O número em octal é: %d.",oct);
+            printf("O nÃºmero em octal Ã©: %d.",oct);
             printf("\n");
         }
         else if(i==1 && d == 4){
@@ -316,17 +324,17 @@ int main(){
         }
         
         else if(i==2 && d == 1){
-            printf("Digite um número em decimal: ");
+            printf("Digite um nÃºmero em decimal: ");
             scanf("%d",&dec);
             bin = dec_to_bin(dec);
-            printf("O número em binário é: %d.",bin);
+            printf("O nÃºmero em binÃ¡rio Ã©: %d.",bin);
             printf("\n");
         }
         else if(i==2 && d == 3){
-            printf("Digite um número em decimal: ");
+            printf("Digite um nÃºmero em decimal: ");
             scanf("%d",&dec);
             oct = dec_to_oct(dec);
-            printf("O número em octal é: %d",oct);
+            printf("O nÃºmero em octal Ã©: %d",oct);
             printf("\n");
         }
         else if(i==2 && d == 4){
@@ -357,9 +365,9 @@ int main(){
 
         }
     }
-    printf("\nDeseja converter mais algum número? \n");
+    printf("\nDeseja converter mais algum nÃºmero? \n");
 	printf( "Digite 1- Sim\n");
-	printf("Digite 2- Não \n");
+	printf("Digite 2- NÃ£o \n");
     scanf("%d", &num);
 }while(num==1);
     return 0;
